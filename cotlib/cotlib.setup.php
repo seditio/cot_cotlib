@@ -15,6 +15,9 @@ Lock_guests=W12345A
 Auth_members=R
 Lock_members=W12345A
 Requires_modules=
+Requires_plugins=
+Recommends_modules=
+Recommends_plugins=catlist,comlist,forman,oneline,pagecount,pagelist,thanks
 [END_COT_EXT]
 [BEGIN_COT_EXT_CONFIG]
 [END_COT_EXT_CONFIG]
