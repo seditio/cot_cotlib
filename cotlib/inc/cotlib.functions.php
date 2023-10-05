@@ -81,7 +81,8 @@ function sedby_geturlparams() {
     global $m, $p, $a, $user;
     $out = array('m' => $m, 'p' => $p, 'a' => $a, 'user' => $user);
   } else {
-    $out = array();
+		global $a, $user;
+    $out = array('a' => $a, 'user' => $user);
   }
   return $out;
 }
