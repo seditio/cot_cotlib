@@ -12,6 +12,13 @@ defined('COT_CODE') or die('Wrong URL');
 /**
 * Returns structure cats with no access
 */
+function sedby_user_exists($userid) {
+	return Cot::$db->query("SELECT user_id FROM " . Cot::$db->users . " WHERE user_id = ?", array((int)$userid))->fetchColumn();
+}
+
+/**
+* Returns structure cats with no access
+*/
 function sedby_black_cats() {
 	$db_structure = Cot::$db->structure;
 	$noread = "";
