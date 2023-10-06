@@ -75,23 +75,25 @@ function sedby_geturlarea() {
 function sedby_geturlparams() {
   if (defined('COT_LIST')) {
     global $list_url_path;
-    $out = $list_url_path;
+    $url_params = $list_url_path;
   } elseif (defined('COT_PAGES')) {
     global $urlParams;
-    $out = $urlParams;
+    $url_params = $urlParams;
   } elseif (defined('COT_USERS')) {
     // global $m, $id, $u;
     // $out = empty($m) ? array() : array('m' => $m, 'id' => $id, 'u' => $u);
     global $m, $id, $u;
-    $out = empty($m) ? array() : array('m' => $m, 'id' => $id);
+    $url_params = empty($m) ? array() : array('m' => $m, 'id' => $id);
   } elseif (defined('COT_ADMIN')) {
     global $m, $p, $a, $user;
-    $out = array('m' => $m, 'p' => $p, 'a' => $a, 'user' => $user);
-  } else {
+    $url_params = array('m' => $m, 'p' => $p, 'a' => $a, 'user' => $user);
+  } elseif (defined('COT_THANKS')) {
 		global $a, $user, $ext, $item;
-    $out = array('a' => $a, 'user' => $user, 'ext' => $ext, 'item' => $item);
-  }
-  return $out;
+    $url_params = array('a' => $a, 'user' => $user, 'ext' => $ext, 'item' => $item);
+  } else {
+		$url_params = array();
+	}
+  return $url_params;
 }
 
 /**
